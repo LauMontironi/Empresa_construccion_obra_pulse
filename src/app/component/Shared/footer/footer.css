@@ -1,0 +1,136 @@
+:host {
+    display: block;
+}
+
+.footer {
+    margin-top: 56px;
+    background: #0f172a;
+    color: rgba(255, 255, 255, 0.88);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 18px;
+    display: grid;
+    grid-template-columns: 1.1fr 1.4fr;
+    gap: 28px;
+}
+
+.brandRow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.footer__logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.footer__name {
+    font-weight: 800;
+    color: #fff;
+    font-size: 18px;
+}
+
+.footer__tagline {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.72);
+    margin-top: 2px;
+}
+
+.footer__smallLinks {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.footer__smallLinks a {
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.footer__smallLinks a:hover {
+    background: rgba(255, 255, 255, 0.10);
+    color: #fff;
+}
+
+.footer__cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.col__title {
+    color: #fbbf24;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.col__link {
+    display: block;
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.col__link:hover {
+    color: #fff;
+}
+
+.col__text {
+    font-size: 14px;
+    margin: 8px 0;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.social {
+    display: flex;
+    gap: 10px;
+}
+
+.social__btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    font-weight: 700;
+}
+
+.social__btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 18px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.66);
+}
+
+/* Responsive */
+@media (max-width: 920px) {
+    .footer__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__cols {
+        grid-template-columns: 1fr;
+    }
+}

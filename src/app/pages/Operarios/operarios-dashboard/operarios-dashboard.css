@@ -1,0 +1,134 @@
+.dashboard {
+    min-height: 100vh;
+    background: #f6f7fb;
+    padding: 32px 0 48px;
+}
+
+.dashboard__container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 18px;
+}
+
+/* HEADER SUPERIOR */
+.dashboard__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.dashboard__eyebrow {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.dashboard__main-title {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.1;
+    color: #111827;
+}
+
+.dashboard__subtitle {
+    margin: 10px 0 0;
+    max-width: 560px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+.dashboard__highlight {
+    background: #fbbf24;
+    color: #111827;
+    border-radius: 18px;
+    padding: 18px 22px;
+    min-width: 180px;
+    box-shadow: 0 10px 24px rgba(251, 191, 36, 0.22);
+}
+
+.dashboard__highlight-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+.dashboard__highlight-value {
+    display: block;
+    margin-top: 8px;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* SECCIONES */
+.dashboard__section {
+    margin-top: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.dashboard__section h2 {
+    margin: 0 0 16px;
+    font-size: 22px;
+    color: #111827;
+}
+
+.dashboard__section button {
+    margin-top: 16px;
+    border: 1px solid rgba(17, 24, 39, 0.10);
+    background: #111827;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.dashboard__section button:hover {
+    background: #1f2937;
+}
+
+.dashboard__section button:active {
+    transform: translateY(1px);
+}
+
+/* GRID DE OBRAS */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+/* BANNER INFERIOR */
+.dashboard__banner {
+    margin-top: 40px;
+    border-top: 1px solid rgba(17, 24, 39, 0.06);
+}
+
+.dashboard__banner img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard__banner img {
+        height: 220px;
+    }
+}

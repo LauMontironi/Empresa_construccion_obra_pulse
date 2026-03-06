@@ -1,0 +1,103 @@
+<app-navbar></app-navbar>
+
+<main class="home">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero__inner">
+            <div class="hero__left">
+                <h1 class="hero__title">Efficient Construction Management, simplified.</h1>
+
+                <p class="hero__subtitle">
+                    Track job sites, assignments, progress updates, incidents and photos — all in one workspace.
+                </p>
+
+                <div class="hero__actions">
+                    <a class="btn btn--primary" routerLink="/admin">Admin Dashboard</a>
+                    <a class="btn btn--secondary" routerLink="/operarios">Worker Dashboard</a>
+                </div>
+
+                <div class="hero__chips">
+                    <div class="chip"><span class="chip__dot"></span> Works</div>
+                    <div class="chip"><span class="chip__dot"></span> Assignments & status</div>
+                </div>
+            </div>
+
+            <div class="hero__right" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 1 -->
+    <section class="section" id="features">
+        <div class="section__inner">
+            <h2 class="section__title">Built for daily operations</h2>
+            <p class="section__subtitle">Simple screens, clear workflows, less chaos.</p>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="card__title">
+                        <span class="card__icon" aria-hidden="true"><span class="msr">assignment</span></span>
+                        Job tracking
+                    </div>
+                    <div class="card__text">See what’s pending, in progress and completed in seconds.</div>
+                </article>
+            
+                <article class="card">
+                    <div class="card__title">
+                        <span class="card__icon" aria-hidden="true"><span class="msr">notifications</span></span>
+                        Incidents &amp; updates
+                    </div>
+                    <div class="card__text">Workers report issues and progress with notifications.</div>
+                </article>
+            
+                <article class="card">
+                    <div class="card__title">
+                        <span class="card__icon" aria-hidden="true"><span class="msr">photo_camera</span></span>
+                        Photo evidence
+                    </div>
+                    <div class="card__text">Upload photos to keep a visual record of each job.</div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="section section--alt" id="workflows">
+        <div class="section__inner">
+            <h2 class="section__title">Two dashboards, one process</h2>
+            <p class="section__subtitle">Simple screens, clear workflows, less chaos.</p>
+
+            <div class="steps steps--grid">
+                <div class="step">
+                    <div class="step__num">1</div>
+                    <div>
+                        <div class="step__title">Admin assigns work</div>
+                        <div class="step__text">Create jobs, assign available workers, monitor status.</div>
+                    </div>
+                </div>
+            
+                <div class="step">
+                    <div class="step__num">2</div>
+                    <div>
+                        <div class="step__title">Worker updates status</div>
+                        <div class="step__text">Mark as pending / in progress / completed.</div>
+                    </div>
+                </div>
+            
+                <div class="step">
+                    <div class="step__num">3</div>
+                    <div>
+                        <div class="step__title">Notify &amp; upload photos</div>
+                        <div class="step__text">Report incidents, progress, materials and evidence.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section__actions">
+                <a class="btn btn--primary" routerLink="/admin">Go to Admin</a>
+                <a class="btn btn--dark" routerLink="/operarios">Go to Worker</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<app-footer></app-footer>
