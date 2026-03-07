@@ -5,6 +5,9 @@ import { firstValueFrom } from 'rxjs';
 import { MeResponse } from '../interfaces/Ime';
 import { Notificacion } from '../interfaces/Inotificacion';
 import { Obra } from '../interfaces/Iobra';
+import { FotoObra } from '../interfaces/Fotoobra';
+
+
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +15,9 @@ import { Obra } from '../interfaces/Iobra';
 export class OperariosService {
   private http = inject(HttpClient);
 
-  private baseUrl = 'https://empresacontruccion-production.up.railway.app';
+  // private baseUrl = 'https://empresacontruccion-production.up.railway.app';
+
+  private baseUrl = 'http://localhost:8000';
 
   getMe() {
     return firstValueFrom(
@@ -20,15 +25,27 @@ export class OperariosService {
     );
   }
 
-  getNotificacionesOperario() {
+  getMisObras() {
     return firstValueFrom(
-      this.http.get<Notificacion[]>(`${this.baseUrl}/operarios/notificaciones`)
+      this.http.get<Obra[]>(`${this.baseUrl}/operarios/obras`)
     );
   }
 
-  getObrasAdmin() {
+  getMiObraById(obraId: number) {
     return firstValueFrom(
-      this.http.get<Obra[]>(`${this.baseUrl}/admin/obras`)
+      this.http.get<Obra>(`${this.baseUrl}/operarios/obras/${obraId}`)
+    );
+  }
+
+  getFotosDeObra(obraId: number) {
+    return firstValueFrom(
+      this.http.get<FotoObra[]>(`${this.baseUrl}/operarios/obras/${obraId}/fotos`)
+    );
+  }
+
+  getNotificacionesOperario() {
+    return firstValueFrom(
+      this.http.get<Notificacion[]>(`${this.baseUrl}/operarios/notificaciones`)
     );
   }
 }

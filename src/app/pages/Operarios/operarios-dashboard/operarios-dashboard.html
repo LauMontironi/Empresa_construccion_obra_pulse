@@ -9,7 +9,7 @@
                     <p class="dashboard__eyebrow">CRM interno</p>
 
                     <h1 class="dashboard__main-title">
-                        ObraPulse · Panel Operarios
+                        ObraPulse | Panel Operarios
                     </h1>
 
                     <p class="dashboard__subtitle">
@@ -31,8 +31,17 @@
         </section>
 
         <!-- USER -->
+<div style="background: white; padding: 12px; margin-bottom: 12px; border: 1px solid #ccc;">
+    <p>Nombre directo desde dashboard: cambiar luego y usar el app-user[card]</p>
+    <p>{{ me?.first_name }} {{ me?.last_name }}</p>
+    <p>Rol: {{ me?.rol }}</p>
+    <p>Especialidad: {{ me?.operario?.especialidad }}</p>
+</div>
+
+
+
         <section class="dashboard__section">
-            <app-user-card></app-user-card>
+            <app-user-card [user]="me"></app-user-card>
         </section>
 
         <!-- WORKS -->
@@ -41,8 +50,11 @@
             <h2>Mis obras</h2>
 
             <div class="works-grid">
-                <app-obra-card></app-obra-card>
-                <app-obra-card></app-obra-card>
+                @for (obra of obrasPreview; track obra.id) {
+                <app-obra-card [obra]="obra"></app-obra-card>
+                } @empty {
+                <p>No tienes obras asignadas por ahora.</p>
+                }
             </div>
 
             <button routerLink="/operarios/mis-obras">

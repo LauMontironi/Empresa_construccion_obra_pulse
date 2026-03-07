@@ -1,1 +1,41 @@
-<p>obra-card works!</p>
+<div class="obra-card">
+
+    <div class="obra-card__image">
+        <img [src]="obra().foto || '/assets/obra_default.jpg'" alt="Imagen de la obra">
+    </div>
+
+    <div class="obra-card__content">
+
+        <h3 class="obra-card__title">
+            {{ obra().titulo }}
+        </h3>
+
+        <p class="obra-card__categoria">
+            {{ obra().categoria }}
+        </p>
+
+        <p class="obra-card__ubicacion">
+            {{ obra().localizacion }}
+        </p>
+
+        <div class="obra-card__footer">
+
+            <span class="obra-card__estado" [class.estado-pendiente]="obra().estado === 'pendiente'"
+                [class.estado-progreso]="obra().estado === 'en progreso'"
+                [class.estado-completada]="obra().estado === 'completada'">
+
+                {{ obra().estado }}
+
+            </span>
+
+            <a [routerLink]="['/operarios/obras', obra().id]" class="obra-card__link">
+
+                Ver obra
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
