@@ -7,5 +7,6 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: Home },
   { path: 'operarios', component: OperariosDashboard, canActivate: [authGuard] },
+  // { path: 'operarios/mis-obras', component: obra }
   { path: '**', redirectTo: 'home' }
 ];

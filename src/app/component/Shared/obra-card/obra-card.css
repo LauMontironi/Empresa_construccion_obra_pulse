@@ -1,0 +1,82 @@
+.obra-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+    transition: transform 0.15s ease;
+}
+
+.obra-card:hover {
+    transform: translateY(-3px);
+}
+
+.obra-card__image {
+    height: 150px;
+    overflow: hidden;
+}
+
+.obra-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.obra-card__content {
+    padding: 16px;
+}
+
+.obra-card__title {
+    margin: 0;
+    font-size: 18px;
+    color: #111827;
+}
+
+.obra-card__categoria {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.obra-card__ubicacion {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.obra-card__footer {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.obra-card__estado {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* estados */
+
+.estado-pendiente {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.estado-progreso {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.estado-completada {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.obra-card__link {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+    text-decoration: none;
+}

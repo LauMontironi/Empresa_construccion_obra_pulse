@@ -41,8 +41,11 @@
             <h2>Mis obras</h2>
 
             <div class="works-grid">
-                <app-obra-card></app-obra-card>
-                <app-obra-card></app-obra-card>
+                @for (obra of obrasPreview; track obra.id) {
+                <app-obra-card [obra]="obra"></app-obra-card>
+                } @empty {
+                <p>No tienes obras asignadas por ahora.</p>
+                }
             </div>
 
             <button routerLink="/operarios/mis-obras">
