@@ -6,6 +6,8 @@ import { UserCard } from '../../../component/Shared/user-card/user-card';
 
 import { OperariosService } from '../../../services/operarios';
 import { Obra } from '../../../interfaces/Iobra';
+import { MeResponse } from '../../../interfaces/Ime';
+
 
 @Component({
   selector: 'app-operarios-dashboard',
@@ -17,15 +19,18 @@ import { Obra } from '../../../interfaces/Iobra';
 export class OperariosDashboard implements OnInit {
   private operariosService = inject(OperariosService);
 
+  me: MeResponse | null = null;
   obras: Obra[] = [];
   obrasPreview: Obra[] = [];
 
   async ngOnInit() {
-    try {
-      this.obras = await this.operariosService.getMisObras();
-      this.obrasPreview = this.obras.slice(0, 2);
-    } catch (error) {
-      console.error('Error al cargar las obras del operario:', error);
-    }
+  try {
+    this.me = await this.operariosService.getMe();
+
+    this.obras = await this.operariosService.getMisObras();
+    this.obrasPreview = this.obras.slice(0, 2);
+  } catch (error) {
+    console.error('Error al cargar datos del operario:', error);
   }
+}
 }

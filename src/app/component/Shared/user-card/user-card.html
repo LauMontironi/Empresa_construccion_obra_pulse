@@ -1,34 +1,49 @@
-
-
+@if (user()) {
 <div class="user-card">
+    <div class="user-card__left">
+        <p class="user-card__eyebrow">CRM · ObraPulse</p>
+        <h2 class="user-card__panel-title">Panel de Operarios</h2>
 
-    <div class="user-card__avatar">
-        <img src="https://res.cloudinary.com/dej3mecyv/image/upload/v1772788828/Operario_electricista_axoayk.jpg"
-            alt="Perfil operario">
-    </div>
+        <div class="user-card__profile">
+            <div class="user-card__avatar">
+                <img [src]="user()?.foto_url || '/assets/user-default.jpg'" alt="Perfil operario">
+            </div>
 
-    <div class="user-card__info">
-        <h3 class="user-card__name">Juan Pérez</h3>
+            <div class="user-card__info">
+                <h3 class="user-card__name">
+                    {{ user()?.first_name }} {{ user()?.last_name }}
+                </h3>
 
-        <p class="user-card__role">
-            Electricista industrial
-        </p>
+                <p class="user-card__role">
+                    {{ user()?.operario?.especialidad }}
+                </p>
 
-        <div class="user-card__meta">
+                <div class="user-card__meta">
+                    <span class="meta">
+                        Estado: {{ user()?.operario?.estado }}
+                    </span>
 
-            <span class="meta">
-                Estado: Disponible
-            </span>
+                    <span class="meta">
+                        {{ user()?.operario?.localizacion }}
+                    </span>
 
-            <span class="meta">
-                Madrid Centro
-            </span>
-
-            <span class="meta">
-                +34 600 123 456
-            </span>
-
+                    <span class="meta">
+                        {{ user()?.operario?.telefono }}
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 
+    <div class="user-card__right">
+        <div class="highlight-card">
+            <p class="highlight-card__label">Obras completadas</p>
+            <p class="highlight-card__value">0</p>
+        </div>
+    </div>
 </div>
+} @else {
+<div class="user-card user-card--empty">
+    <p>No hay datos del operario cargados.</p>
+</div>
+}
