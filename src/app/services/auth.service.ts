@@ -11,7 +11,7 @@ export class AuthService {
 
     private baseUrl = 'https://empresacontruccion-production.up.railway.app';
 
-    // private baseUrl = 'http://localhost:8000';
+    //private baseUrl = 'http://localhost:8000';
 
   login(usuarioLog: { email: string; password: string }) {
     return firstValueFrom(

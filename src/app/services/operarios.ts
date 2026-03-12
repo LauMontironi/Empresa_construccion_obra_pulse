@@ -17,7 +17,7 @@ export class OperariosService {
 
   private baseUrl = 'https://empresacontruccion-production.up.railway.app';
 
-  // private baseUrl = 'http://localhost:8000';
+  //private baseUrl = 'http://localhost:8000';
 
   getMe() {
     return firstValueFrom(

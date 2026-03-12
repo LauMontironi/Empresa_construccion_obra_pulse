@@ -37,7 +37,10 @@ export class LoginComponent {
     }
 
     try {
-      await this.authService.login(this.loginForm.value);
+      const response = await this.authService.login(this.loginForm.value);
+
+      // Ajusta esto según cómo venga el token en tu backend
+      localStorage.setItem('token', response.access_token);
 
       const me = await this.operariosService.getMe();
 
