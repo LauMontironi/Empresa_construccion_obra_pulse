@@ -28,8 +28,11 @@ export class AuthService {
   
     }
     
-    register(data: any) {
-    console.log('Register request', data);
+    
+  register(data: { email: string; password: string; first_name: string; last_name: string }) {
+  return firstValueFrom(
+    this.http.post(`${this.baseUrl}/auth/register`, data)
+  );
 }
 }
   

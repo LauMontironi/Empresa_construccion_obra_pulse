@@ -8,7 +8,7 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "src/app/pages/Admin/admin.routes"  ],
   "exclude": [
     "src/**/*.spec.ts"
   ]
