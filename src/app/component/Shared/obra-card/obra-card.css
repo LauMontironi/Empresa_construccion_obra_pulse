@@ -80,3 +80,9 @@
     color: #111827;
     text-decoration: none;
 }
+
+.obra-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

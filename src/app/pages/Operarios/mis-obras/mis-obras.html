@@ -1,0 +1,46 @@
+<section class="mis-obras">
+    <div class="mis-obras__container">
+
+        <div class="mis-obras__topbar">
+            <div>
+                <p class="mis-obras__eyebrow">Panel operario</p>
+                <h1>Mis obras</h1>
+                <p class="mis-obras__intro">Aquí puedes ver todas las obras que tienes asignadas.</p>
+            </div>
+
+            <button routerLink="/operarios" class="mis-obras__back-btn">
+                ← Volver al dashboard
+            </button>
+        </div>
+
+        @if (loading) {
+        <p>Cargando datos...</p>
+        }
+
+        @if (!loading && error) {
+        <p>{{ error }}</p>
+        }
+
+        @if (!loading && !error) {
+
+        <section class="mis-obras__user">
+            @if (me) {
+            <app-user-card [user]="me"></app-user-card>
+            } @else {
+            <p>Cargando datos del operario...</p>
+            }
+        </section>
+
+        <section class="mis-obras__list">
+            <div class="works-grid">
+                @for (obra of obras; track obra.id) {
+                <app-obra-card [obra]="obra"></app-obra-card>
+                } @empty {
+                <p>No tienes obras asignadas por ahora.</p>
+                }
+            </div>
+        </section>
+
+        }
+    </div>
+</section>

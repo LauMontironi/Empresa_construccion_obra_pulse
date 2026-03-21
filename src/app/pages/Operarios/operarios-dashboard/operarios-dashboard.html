@@ -1,84 +1,59 @@
 <section class="dashboard">
     <div class="dashboard__container">
 
-        <!-- HEADER -->
-        <section class="dashboard__section">
-            <div class="dashboard__header">
+        <section class="dashboard__hero">
+            <div class="dashboard__hero-content">
+                <p class="dashboard__eyebrow">CRM INTERNO · OBRAPULSE</p>
+                <h1 class="dashboard__main-title">Panel del Operario</h1>
+                <p class="dashboard__subtitle">
+                    Consulta tus datos, revisa tus obras asignadas y haz seguimiento de tu actividad diaria.
+                </p>
+            </div>
 
-                <div>
-                    <p class="dashboard__eyebrow">CRM interno</p>
-
-                    <h1 class="dashboard__main-title">
-                        ObraPulse | Panel Operarios
-                    </h1>
-
-                    <p class="dashboard__subtitle">
-                        Consulta tus datos, revisa tus obras y gestiona notificaciones.
-                    </p>
-                </div>
-
-                <div class="dashboard__highlight">
-                    <span class="dashboard__highlight-label">
-                        Obras completadas
-                    </span>
-
-                    <strong class="dashboard__highlight-value">
-                        12
-                    </strong>
-                </div>
-
+            <div class="dashboard__highlight">
+                <span class="dashboard__highlight-label">Obras completadas</span>
+                <strong class="dashboard__highlight-value">12</strong>
             </div>
         </section>
 
-        <!-- USER -->
-<div style="background: white; padding: 12px; margin-bottom: 12px; border: 1px solid #ccc;">
-    <p>Nombre directo desde dashboard: cambiar luego y usar el app-user[card]</p>
-    <p>{{ me?.first_name }} {{ me?.last_name }}</p>
-    <p>Rol: {{ me?.rol }}</p>
-    <p>Especialidad: {{ me?.operario?.especialidad }}</p>
-</div>
-
-
-
         <section class="dashboard__section">
+            @if (loading) {
+            <p>Cargando datos del operario...</p>
+            } @else if (error) {
+            <p>{{ error }}</p>
+            } @else if (me) {
             <app-user-card [user]="me"></app-user-card>
+            }
         </section>
 
-        <!-- WORKS -->
         <section class="dashboard__section">
+            <div class="dashboard__section-head">
+                <div>
+                    <p class="dashboard__section-kicker">Obras asignadas</p>
+                    <h2>Mis obras</h2>
+                </div>
 
-            <h2>Mis obras</h2>
+                <button routerLink="/operarios/mis-obras">
+                    Ver todas
+                </button>
+            </div>
 
+            @if (loading) {
+            <p>Cargando obras...</p>
+            } @else if (obrasPreview.length > 0) {
             <div class="works-grid">
                 @for (obra of obrasPreview; track obra.id) {
                 <app-obra-card [obra]="obra"></app-obra-card>
-                } @empty {
-                <p>No tienes obras asignadas por ahora.</p>
                 }
             </div>
-
-            <button routerLink="/operarios/mis-obras">
-                Ver todas
-            </button>
-
-        </section>
-
-        <!-- NOTIFICATIONS -->
-        <section class="dashboard__section">
-
-            <h2>Notificaciones</h2>
-
-            <button routerLink="/operarios/notificaciones">
-                Ver notificaciones
-            </button>
-
+            } @else {
+            <p>No tienes obras asignadas por ahora.</p>
+            }
         </section>
 
     </div>
 
-    <!-- BANNER INFERIOR -->
     <section class="dashboard__banner">
         <img src="/assets/banner.png" alt="Equipo de construcción">
     </section>
-
 </section>

@@ -6,7 +6,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   const token = localStorage.getItem('token');
   const router = inject(Router);
 
-  const publicRoutes = ['/home', '/login', '/registro'];
+  const publicRoutes = ['/home', '/login', '/register'];
 
   if (publicRoutes.includes(state.url)) {
     return true;
