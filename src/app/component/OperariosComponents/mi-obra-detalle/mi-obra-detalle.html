@@ -48,6 +48,115 @@
                 </div>
             </div>
         </div>
+
+        <section class="obra-detalle__section">
+            <div class="obra-detalle__section-head">
+                <div>
+                    <p class="obra-detalle__section-kicker">Seguimiento</p>
+                    <h2>Registrar actualización</h2>
+                </div>
+            </div>
+
+            <form [formGroup]="notificationForm" (ngSubmit)="onSubmitNotification()" class="obra-detalle__form">
+                <div class="form-group">
+                    <label for="tipo">Tipo</label>
+                    <select id="tipo" formControlName="tipo">
+                        <option value="avance">Avance</option>
+                        <option value="incidencia">Incidencia</option>
+                        <option value="material">Material</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" rows="5" formControlName="mensaje"
+                        placeholder="Describe el avance, incidencia o necesidad de material"></textarea>
+
+                    @if (notificationForm.get('mensaje')?.touched && notificationForm.get('mensaje')?.invalid) {
+                    <small class="error">
+                        El mensaje es obligatorio y debe tener al menos 5 caracteres.
+                    </small>
+                    }
+                </div>
+
+                @if (formError) {
+                <small class="error">{{ formError }}</small>
+                }
+
+                @if (formSuccess) {
+                <small class="success">{{ formSuccess }}</small>
+                }
+
+                <button type="submit" class="obra-detalle__submit-btn" [disabled]="saving">
+                    {{ saving ? 'Guardando...' : 'Guardar actualización' }}
+                </button>
+            </form>
+        </section>
+
+        <section class="obra-detalle__section">
+            <div class="obra-detalle__section-head">
+                <div>
+                    <p class="obra-detalle__section-kicker">Historial</p>
+                    <h2>Notificaciones de esta obra</h2>
+                </div>
+            </div>
+
+            @if (notificaciones.length > 0) {
+            <div class="notificaciones-list">
+                @for (item of notificaciones; track item.id) {
+                <article class="notificacion-card">
+                    <div class="notificacion-card__top">
+                        <span class="notificacion-badge" [class.badge-avance]="item.tipo === 'avance'"
+                            [class.badge-incidencia]="item.tipo === 'incidencia'"
+                            [class.badge-material]="item.tipo === 'material'">
+                            {{ item.tipo }}
+                        </span>
+
+                        <span class="notificacion-card__date">
+                            {{ formatFecha(item.created_at) }}
+                        </span>
+                    </div>
+
+                    <p class="notificacion-card__message">
+                        {{ item.mensaje }}
+                    </p>
+                </article>
+                }
+            </div>
+            } @else {
+            <p>Aún no hay actualizaciones registradas para esta obra.</p>
+            }
+        </section>
+
+        <section class="obra-detalle__section">
+            <div class="obra-detalle__section-head">
+                <div>
+                    <p class="obra-detalle__section-kicker">Galería</p>
+                    <h2>Fotos de la obra</h2>
+                </div>
+            </div>
+
+            @if (fotos.length > 0) {
+            <div class="fotos-grid">
+                @for (foto of fotos; track foto.id) {
+                <article class="foto-card">
+                    <img [src]="foto.url" [alt]="foto.descripcion || 'Foto de la obra'" class="foto-card__image">
+
+                    <div class="foto-card__body">
+                        <p class="foto-card__description">
+                            {{ foto.descripcion || 'Sin descripción' }}
+                        </p>
+                        <span class="foto-card__date">
+                            {{ formatFecha(foto.created_at) }}
+                        </span>
+                    </div>
+                </article>
+                }
+            </div>
+            } @else {
+            <p>No hay fotos cargadas para esta obra.</p>
+            }
+        </section>
         }
     </div>
 </section>

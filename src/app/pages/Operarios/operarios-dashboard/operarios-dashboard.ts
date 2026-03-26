@@ -25,6 +25,22 @@ export class OperariosDashboard implements OnInit {
   loading = true;
   error = '';
 
+  get obrasCompletadas(): number {
+    return this.obras.filter((obra) => obra.estado === 'completada').length;
+  }
+
+  get obrasEnProgreso(): number {
+    return this.obras.filter((obra) => obra.estado === 'en progreso').length;
+  }
+
+  get obrasPendientes(): number {
+    return this.obras.filter((obra) => obra.estado === 'pendiente').length;
+  }
+
+  get totalObras(): number {
+    return this.obras.length;
+  }
+
   async ngOnInit() {
     try {
       this.me = await this.operariosService.getMe();

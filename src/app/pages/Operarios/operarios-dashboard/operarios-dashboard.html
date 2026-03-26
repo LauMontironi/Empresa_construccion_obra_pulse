@@ -8,11 +8,25 @@
                 <p class="dashboard__subtitle">
                     Consulta tus datos, revisa tus obras asignadas y haz seguimiento de tu actividad diaria.
                 </p>
+
+                @if (!loading && !error) {
+                <div class="dashboard__stats">
+                    <div class="dashboard__stat-chip">
+                        Total asignadas: <strong>{{ totalObras }}</strong>
+                    </div>
+                    <div class="dashboard__stat-chip">
+                        En progreso: <strong>{{ obrasEnProgreso }}</strong>
+                    </div>
+                    <div class="dashboard__stat-chip">
+                        Pendientes: <strong>{{ obrasPendientes }}</strong>
+                    </div>
+                </div>
+                }
             </div>
 
             <div class="dashboard__highlight">
                 <span class="dashboard__highlight-label">Obras completadas</span>
-                <strong class="dashboard__highlight-value">12</strong>
+                <strong class="dashboard__highlight-value">{{ obrasCompletadas }}</strong>
             </div>
         </section>
 

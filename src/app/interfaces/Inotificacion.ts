@@ -9,3 +9,9 @@ export interface Notificacion {
   is_read: boolean;
   created_at: string;
 }
+
+export interface CrearNotificacionPayload {
+  obra_id: number;
+  tipo: NotificacionTipo;
+  mensaje: string;
+}

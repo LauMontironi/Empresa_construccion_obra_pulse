@@ -177,3 +177,22 @@
         height: 240px;
     }
 }
+
+.dashboard__stats {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.dashboard__stat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 14px;
+}

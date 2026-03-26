@@ -3,11 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 
 import { MeResponse } from '../interfaces/Ime';
-import { Notificacion } from '../interfaces/Inotificacion';
+import { Notificacion, CrearNotificacionPayload } from '../interfaces/Inotificacion';
 import { Obra } from '../interfaces/Iobra';
 import { FotoObra } from '../interfaces/Fotoobra';
-
-
 
 @Injectable({
   providedIn: 'root',
@@ -16,8 +14,6 @@ export class OperariosService {
   private http = inject(HttpClient);
 
   private baseUrl = 'https://empresacontruccion-production.up.railway.app';
-
-  //private baseUrl = 'http://localhost:8000';
 
   getMe() {
     return firstValueFrom(
@@ -46,6 +42,20 @@ export class OperariosService {
   getNotificacionesOperario() {
     return firstValueFrom(
       this.http.get<Notificacion[]>(`${this.baseUrl}/operarios/notificaciones`)
+    );
+  }
+
+  getNotificacionesPorObra(obraId: number) {
+    return firstValueFrom(
+      this.http.get<Notificacion[]>(
+        `${this.baseUrl}/operarios/notificaciones?obra_id=${obraId}`
+      )
+    );
+  }
+
+  crearNotificacion(data: CrearNotificacionPayload) {
+    return firstValueFrom(
+      this.http.post<Notificacion>(`${this.baseUrl}/operarios/notificaciones`, data)
     );
   }
 }

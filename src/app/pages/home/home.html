@@ -1,24 +1,25 @@
-
-
 <main class="home">
     <!-- HERO -->
     <section class="hero">
         <div class="hero__inner">
             <div class="hero__left">
-                <h1 class="hero__title">Efficient Construction Management, simplified.</h1>
+                <h1 class="hero__title">Gestión de obras y operarios en un solo lugar</h1>
 
                 <p class="hero__subtitle">
-                    Track job sites, assignments, progress updates, incidents and photos — all in one workspace.
+                    ObraPulse centraliza la gestión interna de la empresa constructora:
+                    asignación de obras, seguimiento del progreso, incidencias,
+                    materiales y registro fotográfico.
                 </p>
 
                 <div class="hero__actions">
-                    <a class="btn btn--primary" routerLink="/login">Admin Dashboard</a>
-                    <a class="btn btn--secondary" routerLink="/login">Worker Dashboard</a>
+                    <a class="btn btn--primary" routerLink="/login">Iniciar sesión</a>
+                    <a class="btn btn--secondary" routerLink="/register">Crear cuenta</a>
                 </div>
 
                 <div class="hero__chips">
-                    <div class="chip"><span class="chip__dot"></span> Works</div>
-                    <div class="chip"><span class="chip__dot"></span> Assignments & status</div>
+                    <div class="chip"><span class="chip__dot"></span> Gestión de obras</div>
+                    <div class="chip"><span class="chip__dot"></span> Seguimiento de operarios</div>
+                    <div class="chip"><span class="chip__dot"></span> Incidencias y fotos</div>
                 </div>
             </div>
 
@@ -29,32 +30,40 @@
     <!-- SECTION 1 -->
     <section class="section" id="features">
         <div class="section__inner">
-            <h2 class="section__title">Built for daily operations</h2>
-            <p class="section__subtitle">Simple screens, clear workflows, less chaos.</p>
+            <h2 class="section__title">Funciones principales</h2>
+            <p class="section__subtitle">
+                Una plataforma pensada para el trabajo diario de administración y operarios.
+            </p>
 
             <div class="cards">
                 <article class="card">
                     <div class="card__title">
                         <span class="card__icon" aria-hidden="true"><span class="msr">assignment</span></span>
-                        Job tracking
+                        Gestión de obras
                     </div>
-                    <div class="card__text">See what’s pending, in progress and completed in seconds.</div>
+                    <div class="card__text">
+                        Consulta obras pendientes, en progreso o completadas, con información clara y organizada.
+                    </div>
                 </article>
-            
+
                 <article class="card">
                     <div class="card__title">
                         <span class="card__icon" aria-hidden="true"><span class="msr">notifications</span></span>
-                        Incidents &amp; updates
+                        Avisos e incidencias
                     </div>
-                    <div class="card__text">Workers report issues and progress with notifications.</div>
+                    <div class="card__text">
+                        Los operarios pueden reportar avances, incidencias o necesidades de material en tiempo real.
+                    </div>
                 </article>
-            
+
                 <article class="card">
                     <div class="card__title">
                         <span class="card__icon" aria-hidden="true"><span class="msr">photo_camera</span></span>
-                        Photo evidence
+                        Evidencia fotográfica
                     </div>
-                    <div class="card__text">Upload photos to keep a visual record of each job.</div>
+                    <div class="card__text">
+                        Guarda imágenes del progreso de cada obra para llevar un control visual del trabajo realizado.
+                    </div>
                 </article>
             </div>
         </div>
@@ -63,40 +72,47 @@
     <!-- SECTION 2 -->
     <section class="section section--alt" id="workflows">
         <div class="section__inner">
-            <h2 class="section__title">Two dashboards, one process</h2>
-            <p class="section__subtitle">Simple screens, clear workflows, less chaos.</p>
+            <h2 class="section__title">Cómo funciona</h2>
+            <p class="section__subtitle">
+                Dos paneles conectados para mejorar la coordinación del equipo.
+            </p>
 
             <div class="steps steps--grid">
                 <div class="step">
                     <div class="step__num">1</div>
                     <div>
-                        <div class="step__title">Admin assigns work</div>
-                        <div class="step__text">Create jobs, assign available workers, monitor status.</div>
+                        <div class="step__title">El administrador organiza</div>
+                        <div class="step__text">
+                            Crea obras, asigna operarios y controla el estado general del trabajo.
+                        </div>
                     </div>
                 </div>
-            
+
                 <div class="step">
                     <div class="step__num">2</div>
                     <div>
-                        <div class="step__title">Worker updates status</div>
-                        <div class="step__text">Mark as pending / in progress / completed.</div>
+                        <div class="step__title">El operario consulta sus tareas</div>
+                        <div class="step__text">
+                            Revisa sus obras asignadas, accede al detalle y sigue su actividad diaria.
+                        </div>
                     </div>
                 </div>
-            
+
                 <div class="step">
                     <div class="step__num">3</div>
                     <div>
-                        <div class="step__title">Notify &amp; upload photos</div>
-                        <div class="step__text">Report incidents, progress, materials and evidence.</div>
+                        <div class="step__title">Se registran avances e incidencias</div>
+                        <div class="step__text">
+                            El sistema facilita el seguimiento mediante actualizaciones, fotos y comunicación interna.
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="section__actions">
-                <a class="btn btn--primary" routerLink="/admin">Go to Admin</a>
-                <a class="btn btn--dark" routerLink="/operarios">Go to Worker</a>
+            <div class="hero__actions" style="margin-top: 24px;">
+                <a class="btn btn--primary" routerLink="/login">Acceder</a>
+                <a class="btn btn--dark" routerLink="/register">Registrarme</a>
             </div>
         </div>
     </section>
 </main>
-

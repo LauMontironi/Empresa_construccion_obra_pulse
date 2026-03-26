@@ -29,7 +29,13 @@ export class AuthService {
     }
     
     
-  register(data: { email: string; password: string; first_name: string; last_name: string }) {
+  register(data: {
+  email: string;
+  password: string;
+  first_name: string;
+  last_name: string;
+  rol: 'operario';
+}) {
   return firstValueFrom(
     this.http.post(`${this.baseUrl}/auth/register`, data)
   );
